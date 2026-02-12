@@ -1,9 +1,9 @@
 // ============================================
-// URL de la API de Gravity Falls
-// Esta API devuelve un arreglo con personajes
+// URL de la API publica de Digimon
+// Devuelve un arreglo con muchos Digimon
 // ============================================
 
-const API_URL = "https://gravityfallsapi.vercel.app/api/characters";
+const API_URL = "https://digimon-api.vercel.app/api/digimon";
 
 
 // ============================================
@@ -11,32 +11,32 @@ const API_URL = "https://gravityfallsapi.vercel.app/api/characters";
 // Aqui hacemos la peticion a la API
 // ============================================
 
-async function obtenerPersonajes() {
+async function obtenerDigimon() {
 
     try {
 
         // Hacemos la peticion usando fetch
         const respuesta = await fetch(API_URL);
 
-        // Convertimos la respuesta a formato JSON
+        // Convertimos la respuesta a JSON
         const datos = await respuesta.json();
 
         // Mostramos el JSON en consola
-        // Esto es importante para la captura del profesor
+        // Esto sirve para la captura que pide el profesor
         console.log(datos);
 
-        // Tomamos solo los primeros 20 personajes
+        // Tomamos solo los primeros 20 Digimon
         const primeros20 = datos.slice(0, 20);
 
         // Recorremos el arreglo
-        primeros20.forEach(personaje => {
-            mostrarPersonaje(personaje);
+        primeros20.forEach(digimon => {
+            mostrarDigimon(digimon);
         });
 
     } catch (error) {
 
         // Si ocurre un error lo mostramos en consola
-        console.error("Error al obtener personajes:", error);
+        console.error("Error al obtener Digimon:", error);
     }
 }
 
@@ -46,10 +46,10 @@ async function obtenerPersonajes() {
 // Aqui manipulamos el DOM
 // ============================================
 
-function mostrarPersonaje(personaje) {
+function mostrarDigimon(digimon) {
 
     // Seleccionamos el contenedor principal
-    const contenedor = document.getElementById("character-container");
+    const contenedor = document.getElementById("digimon-container");
 
     // Creamos un div para la tarjeta
     const card = document.createElement("div");
@@ -57,19 +57,14 @@ function mostrarPersonaje(personaje) {
     // Agregamos la clase CSS
     card.classList.add("card");
 
-    // Insertamos contenido dinamico usando template literals
+    // Insertamos contenido dinamico
     card.innerHTML = `
-        <img src="${personaje.image}" alt="${personaje.name}">
-        <h2>${personaje.name}</h2>
-        <p><strong>Genero:</strong> ${personaje.gender || "Desconocido"}</p>
-        <p><strong>Especie:</strong> ${personaje.species || "Desconocida"}</p>
-        <p><strong>Ocupacion:</strong> ${personaje.occupation || "No disponible"}</p>
-        <p class="descripcion">
-            ${personaje.description || "Sin descripcion disponible."}
-        </p>
+        <img src="${digimon.img}" alt="${digimon.name}">
+        <h2>${digimon.name}</h2>
+        <p class="nivel">Nivel: ${digimon.level}</p>
     `;
 
-    // Agregamos la tarjeta al contenedor principal
+    // Agregamos la tarjeta al contenedor
     contenedor.appendChild(card);
 }
 
@@ -78,4 +73,4 @@ function mostrarPersonaje(personaje) {
 // Ejecutamos la funcion cuando carga la pagina
 // ============================================
 
-obtenerPersonajes();
+obtenerDigimon();
