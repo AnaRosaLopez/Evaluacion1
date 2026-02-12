@@ -1,0 +1,64 @@
+/* ============================= */
+/* Estilos generales de la pagina */
+/* ============================= */
+
+/* Estilo base del cuerpo */
+body {
+    font-family: Arial, sans-serif; /* Fuente general */
+    margin: 0; /* Eliminamos margenes por defecto */
+    background-color: #1b2e1b; /* Fondo oscuro estilo misterio */
+    color: white; /* Texto blanco */
+}
+
+/* ============================= */
+/* Encabezado */
+/* ============================= */
+
+header {
+    text-align: center; /* Centra el texto */
+    padding: 20px; /* Espacio interno */
+    background-color: #3e5c3e; /* Color verde oscuro */
+}
+
+/* ============================= */
+/* Contenedor principal */
+/* ============================= */
+
+/* Contenedor donde se colocan las tarjetas */
+#character-container {
+    display: flex; /* Activamos Flexbox */
+    flex-wrap: wrap; /* Permite que bajen si no caben */
+    justify-content: center; /* Centra horizontalmente */
+    gap: 20px; /* Espacio entre tarjetas */
+    padding: 20px; /* Espacio interno */
+}
+
+/* ============================= */
+/* Tarjeta individual */
+/* ============================= */
+
+.card {
+    background-color: #2f4f2f; /* Fondo verde oscuro */
+    width: 250px; /* Ancho fijo */
+    border-radius: 10px; /* Bordes redondeados */
+    padding: 15px; /* Espacio interno */
+    text-align: center; /* Centra contenido */
+    transition: transform 0.3s ease; /* Animacion suave */
+}
+
+/* Efecto cuando pasa el mouse */
+.card:hover {
+    transform: scale(1.05); /* Aumenta ligeramente el tamaño */
+}
+
+/* Imagen del personaje */
+.card img {
+    width: 100%; /* Imagen ocupa todo el ancho */
+    border-radius: 8px; /* Bordes redondeados */
+}
+
+/* Descripcion del personaje */
+.descripcion {
+    font-size: 13px; /* Texto mas pequeño */
+    margin-top: 10px; /* Espacio superior */
+}
