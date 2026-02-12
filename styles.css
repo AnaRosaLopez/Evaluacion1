@@ -1,12 +1,11 @@
 /* ============================= */
-/* Estilos generales de la pagina */
+/* Estilos generales */
 /* ============================= */
 
-/* Estilo base del cuerpo */
 body {
     font-family: Arial, sans-serif; /* Fuente general */
-    margin: 0; /* Eliminamos margenes por defecto */
-    background-color: #1b2e1b; /* Fondo oscuro estilo misterio */
+    margin: 0; /* Quitamos margenes */
+    background-color: #0d1b2a; /* Fondo azul oscuro */
     color: white; /* Texto blanco */
 }
 
@@ -15,19 +14,18 @@ body {
 /* ============================= */
 
 header {
-    text-align: center; /* Centra el texto */
+    text-align: center; /* Centrar texto */
     padding: 20px; /* Espacio interno */
-    background-color: #3e5c3e; /* Color verde oscuro */
+    background-color: #1b263b; /* Azul mas claro */
 }
 
 /* ============================= */
 /* Contenedor principal */
 /* ============================= */
 
-/* Contenedor donde se colocan las tarjetas */
-#character-container {
+#digimon-container {
     display: flex; /* Activamos Flexbox */
-    flex-wrap: wrap; /* Permite que bajen si no caben */
+    flex-wrap: wrap; /* Permite bajar tarjetas */
     justify-content: center; /* Centra horizontalmente */
     gap: 20px; /* Espacio entre tarjetas */
     padding: 20px; /* Espacio interno */
@@ -38,27 +36,29 @@ header {
 /* ============================= */
 
 .card {
-    background-color: #2f4f2f; /* Fondo verde oscuro */
-    width: 250px; /* Ancho fijo */
+    background-color: #415a77; /* Azul intermedio */
+    width: 220px; /* Ancho fijo */
     border-radius: 10px; /* Bordes redondeados */
     padding: 15px; /* Espacio interno */
-    text-align: center; /* Centra contenido */
+    text-align: center; /* Centrar contenido */
     transition: transform 0.3s ease; /* Animacion suave */
 }
 
 /* Efecto cuando pasa el mouse */
 .card:hover {
-    transform: scale(1.05); /* Aumenta ligeramente el tamaño */
+    transform: scale(1.05); /* Aumenta ligeramente */
 }
 
-/* Imagen del personaje */
+/* Imagen del Digimon */
 .card img {
     width: 100%; /* Imagen ocupa todo el ancho */
     border-radius: 8px; /* Bordes redondeados */
 }
 
-/* Descripcion del personaje */
-.descripcion {
-    font-size: 13px; /* Texto mas pequeño */
+/* Texto de nivel */
+.nivel {
     margin-top: 10px; /* Espacio superior */
+    font-weight: bold; /* Texto en negrita */
 }
+
+
